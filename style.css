@@ -31,6 +31,7 @@ body{
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
+  height: 100vp;
 }
 
 body * {
@@ -81,11 +82,12 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: slider-back 0.4s;
 }
 
 .ligth #switch button {
-  right: 0;
-  left: initial;
+  animation: slider-in 0.4s forwards;
 }
 
 #switch span{
@@ -163,4 +165,24 @@ footer {
 footer span {
   color: var(--powered-by);
   font-weight: 600;
+}
+
+@keyframes slider-in {
+  from{
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+
+}
+
+@keyframes slider-back {
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
+  }
+
 }
